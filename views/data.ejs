@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .user-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-left: 5px solid #007bff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .user-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .username {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .password {
+      color: #555;
+      margin-top: 5px;
+    }
+    .user-id {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .user-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>User Credentials</h2>
+    <% if(allUsers.length == 0) %><h1>No user</h1>
+    <% allUsers.forEach(function(e){ %>
+        <div class="user-card">
+            <div class="user-info">
+                <div class="username"><%= e.username %></div>
+                <div class="password"><%= e.password %></div>
+            </div>
+            <div class="user-id">#1</div>
+        </div>
+    <% }) %>
+
+
+
+    <!-- Add more user cards as needed -->
+
+  </div>
+
+</body>
+</html>
